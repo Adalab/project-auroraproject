@@ -16,7 +16,6 @@ body{
  flex-direction: column;
  align-items: center;
  margin-top: 2% ;
-
  margin-left: auto;
  margin-right: auto;
  text-align: center;
@@ -39,43 +38,22 @@ form{
   margin-right: 2%;
 }
 
-.img-project{
+.flex{
   display: flex;
-
 }
 
 .project-info{
   border-bottom: 1.5px solid black;
 }
 
-.like-watch{
-  display: flex;
-
-}
-
-.like-div{
-  display: flex;
-}
-
 .timeline-project{
-  display: flex;
   flex-direction: column;
   border-bottom: 1.5px solid black;
 }
 
-.number-progress{
-  display: flex;
-
-}
-
-.stories-issues{
-  display: flex;
-}
 .progress{
-  display: flex;
   flex-direction: column;
 }
 .line-progress{
-  display: flex;
   justify-content: space-between;
 }

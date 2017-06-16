@@ -44,7 +44,7 @@ form {
   max-width: 30%;
   margin-right: 2%; }
 
-.img-project {
+.flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -52,49 +52,20 @@ form {
 .project-info {
   border-bottom: 1.5px solid black; }
 
-.like-watch {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.like-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
 .timeline-project {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   border-bottom: 1.5px solid black; }
 
-.number-progress {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.stories-issues {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
 .progress {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
 
 .line-progress {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }

@@ -40,6 +40,6 @@ function login() {
   var userInfo = getUserAccountInfo();
   request.send(JSON.stringify(userInfo));
 
-};
+}
 
 buttonLogin.addEventListener("click", login);
