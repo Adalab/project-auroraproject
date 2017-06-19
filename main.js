@@ -24,9 +24,11 @@ function login() {
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       var data = JSON.parse(request.responseText);
+      console.log(data);
       var value = data.auth_token;
-
+      var userData = data;
       sessionStorage.setItem("token", value);
+      sessionStorage.setItem("user", userData);
       window.location.href = "dashboard.html" ;
     } else {
       console.log("La respuesta del servidor ha devuelto un error");
