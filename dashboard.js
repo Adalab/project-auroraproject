@@ -9,6 +9,7 @@ var teamProject = document.getElementById("team");
 var likesProject = document.getElementById("like");
 var watchProject = document.getElementById("watch");
 var userStoriesProject = document.getElementById("number-stories");
+var issuesProject = document.getElementById("number-issues");
 
 userRequest.open ('GET', 'https://api.taiga.io/api/v1/users/me', true);
 userRequest.setRequestHeader("Content-Type", "application/json");
@@ -80,3 +81,28 @@ userStoriesRequest.onerror = function() {
 };
 
 userStoriesRequest.send();
+
+var issuesRequest = new XMLHttpRequest();
+// var userStories = JSON.parse(sessionStorage.getItem("user"));
+issuesRequest.open ('GET', 'https://api.taiga.io/api/v1/issues?projects=' + user.id, true);
+issuesRequest.setRequestHeader("Content-Type", "application/json");
+issuesRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(sessionStorage.getItem('token')));
+issuesRequest.onload = function () {
+  if (issuesRequest.status >= 200 && issuesRequest.status < 400) {
+    var data = JSON.parse(issuesRequest.responseText);
+    issuesProject.innerHTML = data.length;
+    console.log(data);
+  } else {
+    console.log("La respuesta del servidor ha devuelto un error");
+  }
+};
+
+issuesRequest.onerror = function() {
+
+  console.log("Error al tratar de conectarse con el servidor");
+
+};
+
+issuesRequest.send();
+
+console.log(user.projects);
