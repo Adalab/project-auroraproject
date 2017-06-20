@@ -12,13 +12,16 @@ var userStoriesProject = document.getElementById("number-stories");
 
 userRequest.open ('GET', 'https://api.taiga.io/api/v1/users/me', true);
 userRequest.setRequestHeader("Content-Type", "application/json");
-userRequest.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('token'));
+userRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(sessionStorage.getItem('token')));
 userRequest.onload = function () {
   if (userRequest.status >= 200 && userRequest.status < 400) {
     var data = JSON.parse(userRequest.responseText);
     greeting.innerHTML = "Hello, " + data.full_name;
     console.log(data);
-    avatar.innerHTML = '<img src="'+ data.photo +'">';
+    if (data.photo) {
+      avatar.innerHTML = '<img src="'+ data.photo +'">';
+    }
+
   } else {
     console.log("La respuesta del servidor ha devuelto un error");
   }
@@ -32,9 +35,10 @@ userRequest.send();
 
 
 var projectsRequest = new XMLHttpRequest();
-projectsRequest.open ('GET', 'https://api.taiga.io/api/v1/projects?member='+ sessionStorage.getItem('user'), true);
+var user = JSON.parse(sessionStorage.getItem('user'));
+projectsRequest.open ('GET', 'https://api.taiga.io/api/v1/projects?member=' + user.id, true);
 projectsRequest.setRequestHeader("Content-Type", "application/json");
-projectsRequest.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('token'));
+projectsRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(sessionStorage.getItem('token')));
 projectsRequest.onload = function () {
   if (projectsRequest.status >= 200 && projectsRequest.status < 400) {
     var dataProject = JSON.parse(projectsRequest.responseText);
@@ -56,11 +60,11 @@ projectsRequest.onerror = function() {
 
 projectsRequest.send();
 
-console.log(sessionStorage.getItem('user'));
+console.log(JSON.parse(sessionStorage.getItem('user')));
 var userStoriesRequest = new XMLHttpRequest();
 userStoriesRequest.open ('GET', 'https://api.taiga.io/api/v1/userstories?projects=' + sessionStorage.getItem("user.projects"), true);
 userStoriesRequest.setRequestHeader("Content-Type", "application/json");
-userStoriesRequest.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('token'));
+userStoriesRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(sessionStorage.getItem('token')));
 userStoriesRequest.onload = function () {
   if (userStoriesRequest.status >= 200 && userStoriesRequest.status < 400) {
     var data = JSON.parse(userStoriesRequest.responseText);

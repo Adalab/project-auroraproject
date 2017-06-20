@@ -27,8 +27,8 @@ function login() {
       console.log(data);
       var value = data.auth_token;
       var userData = data;
-      sessionStorage.setItem("token", value);
-      sessionStorage.setItem("user", userData);
+      sessionStorage.setItem("token", JSON.stringify(value));
+      sessionStorage.setItem("user", JSON.stringify(userData));
       window.location.href = "dashboard.html" ;
     } else {
       console.log("La respuesta del servidor ha devuelto un error");
