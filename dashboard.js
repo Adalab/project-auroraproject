@@ -66,9 +66,10 @@ projectsRequest.send();
 console.log(JSON.parse(sessionStorage.getItem('user')));
 var idProject = JSON.parse(sessionStorage.getItem('projectId'));
 var userStoriesRequest = new XMLHttpRequest();
-userStoriesRequest.open ('GET', 'https://api.taiga.io/api/v1/epics/201914/related_userstories', true);
+userStoriesRequest.open ('GET', 'https://api.taiga.io/api/v1/userstories?project='+ 201914, true);
 userStoriesRequest.setRequestHeader("Content-Type", "application/json");
 userStoriesRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(sessionStorage.getItem('token')));
+userStoriesRequest.setRequestHeader("x-disable-pagination", true);
 userStoriesRequest.onload = function () {
   if (userStoriesRequest.status >= 200 && userStoriesRequest.status < 400) {
     var data = JSON.parse(userStoriesRequest.responseText);
@@ -93,6 +94,7 @@ console.log(idProject);
 issuesRequest.open ('GET', 'https://api.taiga.io/api/v1/projects/' + idProject +'/issues_stats' , true);
 issuesRequest.setRequestHeader("Content-Type", "application/json");
 issuesRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(sessionStorage.getItem('token')));
+issuesRequest.setRequestHeader("x-disable-pagination", true);
 issuesRequest.onload = function () {
   if (issuesRequest.status >= 200 && issuesRequest.status < 400) {
     console.log(issuesRequest.responseText);
