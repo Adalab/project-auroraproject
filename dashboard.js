@@ -98,8 +98,6 @@ modulesRequest.onload = function () {
     } else {
       console.log("no found");
     }
-    // modulesProject.innerHTML= "Modules: " + data.length;
-    // console.log(data.is_backlog_activated);
   } else {
     console.log("La respuesta del servidor ha devuelto un error");
   }
@@ -112,6 +110,7 @@ modulesRequest.onerror = function() {
 modulesRequest.send();
 
 var idProject = sessionStorage.getItem("projectID");
+console.log(idProject);
 var userStoriesRequest = new XMLHttpRequest();
 userStoriesRequest.open ('GET', 'https://api.taiga.io/api/v1/userstories?project='+ idProject, true);
 userStoriesRequest.setRequestHeader("Content-Type", "application/json");
