@@ -13,6 +13,8 @@ var userStoriesProject = document.getElementById("number-stories");
 var issuesProject = document.getElementById("number-issues");
 var closedPoints = document.getElementById("closed-points");
 var totalPoints = document.getElementById("total-points");
+var prueba = document.getElementById("prueba");
+var progressBar = document.getElementById("progress-bar");
 
 userRequest.open ('GET', 'https://api.taiga.io/api/v1/users/me', true);
 userRequest.setRequestHeader("Content-Type", "application/json");
@@ -110,7 +112,6 @@ modulesRequest.onerror = function() {
 modulesRequest.send();
 
 var idProject = sessionStorage.getItem("projectID");
-console.log(idProject);
 var userStoriesRequest = new XMLHttpRequest();
 userStoriesRequest.open ('GET', 'https://api.taiga.io/api/v1/userstories?project='+ idProject, true);
 userStoriesRequest.setRequestHeader("Content-Type", "application/json");
@@ -165,6 +166,9 @@ pointRequest.onload = function () {
     var data = JSON.parse(pointRequest.responseText);
     closedPoints.innerHTML = data.closed_points;
     totalPoints.innerHTML = data.defined_points;
+    var number= Math.ceil(data.closed_points * 100/data.defined_points);
+    prueba.innerHTML= number + "%";
+    progressBar.value = number;
   } else {
     console.log("La respuesta del servidor ha devuelto un error");
   }
