@@ -1,9 +1,7 @@
 'use strict';
 
-
 var buttonLogin = document.getElementById("buttonLogin_js");
 var request = new XMLHttpRequest();
-
 
 function getUserAccountInfo() {
   var username = document.getElementById("username_js").value;
@@ -18,7 +16,7 @@ function getUserAccountInfo() {
 }
 
 function login() {
-  request.open('POST', 'https://api.taiga.io/api/v1/auth', true); // use true to make the request async
+  request.open('POST', 'https://api.taiga.io/api/v1/auth', true);
   request.setRequestHeader("Content-Type", "application/json");
   request.setRequestHeader("Accept", "application/json");
   request.onload = function() {

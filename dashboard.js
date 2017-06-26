@@ -47,6 +47,7 @@ projectsRequest.setRequestHeader("Authorization", "Bearer " + JSON.parse(session
 projectsRequest.onload = function () {
   if (projectsRequest.status >= 200 && projectsRequest.status < 400) {
     var dataProject = JSON.parse(projectsRequest.responseText);
+
     projectTitle.innerHTML = dataProject[0].name;
     imgProject.innerHTML = '<img src="'+ dataProject[0].logo_small_url +'">';
     descriptionProject.innerHTML = dataProject[0].description;
@@ -133,7 +134,6 @@ userStoriesRequest.onerror = function() {
 userStoriesRequest.send();
 
 var issuesRequest = new XMLHttpRequest();
-var idProject = sessionStorage.getItem("projectID");
 
 issuesRequest.open ('GET', 'https://api.taiga.io/api/v1/projects/' + idProject +'/issues_stats' , true);
 issuesRequest.setRequestHeader("Content-Type", "application/json");
