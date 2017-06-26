@@ -2,8 +2,10 @@
 
 
 var buttonLogin = document.getElementById("buttonLogin_js");
+var loginErrorText = document.querySelector(".login-error");
 var request = new XMLHttpRequest();
 
+buttonLogin.addEventListener("click", login);
 
 function getUserAccountInfo() {
   var username = document.getElementById("username_js").value;
@@ -24,13 +26,12 @@ function login() {
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       var data = JSON.parse(request.responseText);
-      console.log(data);
       var value = data.auth_token;
       var userData = data;
       sessionStorage.setItem("token", JSON.stringify(value));
       sessionStorage.setItem("user", JSON.stringify(userData));
       window.location.href = "dashboard.html" ;
-    } else {
+    } else{
       console.log("La respuesta del servidor ha devuelto un error");
     }
   };
@@ -43,5 +44,3 @@ function login() {
   request.send(JSON.stringify(userInfo));
 
 }
-
-buttonLogin.addEventListener("click", login);
