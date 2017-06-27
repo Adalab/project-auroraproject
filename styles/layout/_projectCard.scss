@@ -1,0 +1,52 @@
+.row{
+  display: flex;
+  margin: 35px;
+}
+
+// .column{
+//   display: flex;
+//   flex-direction: column;
+//   max-width: 30%;
+//   width: 30%;
+//   padding-right: 10px;
+// }
+
+.flex{
+  display: flex;
+}
+
+.projects_user{
+  background: whitesmoke;
+  color: rgb(19,100,91);
+  border: 3.5px solid rgb(237,230,117);
+  margin-top: 1%;
+  width: 30%;
+  height: 95%;
+  margin-right: 2%;
+  border-radius: 7px;
+  padding: 15px;
+  margin-left: 5px;
+}
+
+.project-info{
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.2em;
+  position: relative;
+}
+
+.img-project {
+  max-width: 90px;
+  height: 85px;
+}
+
+a{
+  text-decoration: none;
+}
+a:hover,
+.project-title:hover{
+  background-color: yellow;
+}

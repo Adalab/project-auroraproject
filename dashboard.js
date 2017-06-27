@@ -29,6 +29,7 @@ function userCall() {
         avatar.innerHTML = '<img src="img/nonAvatar.svg">';
       }else {
         avatar.innerHTML = '<img src="'+ data.photo +'">';
+        // avatar.style.width = '50px';
       }
       console.log(data);
 
@@ -89,7 +90,7 @@ function generateCardHtml(divId, projectSlug){
 
       "</div>"+
 
-      "<a href='https://tree.taiga.io/project/ + project.slug '><h5 class='project-title'></h5>></a>"+
+      "<a href='https://tree.taiga.io/project/ + project.slug '><h5 class='project-title'></h5></a>"+
     "</div>"+
     "<small class='description-project'>Descripcion del proyecto</small>"+
     "<div class='like-watch flex'>"+
@@ -99,7 +100,7 @@ function generateCardHtml(divId, projectSlug){
       "</div>"+
       "<div class='watch-div'>"+
         "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
-        "<small class='watch'>Watching: </small>"+
+        "<small class='watch'>Views: </small>"+
       "</div>"+
     "</div>"+
     "</div>"+
