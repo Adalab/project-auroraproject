@@ -88,19 +88,22 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
 
 .title-dashboard {
-  font-size: 1.7em;
+  font-size: 1em;
   color: white; }
 
 .greeting {
-  font-size: 1em;
-  margin-right: 10px;
+  font-size: 0.7em;
   color: white; }
 
 .user_info {
@@ -116,38 +119,52 @@ header {
           align-items: center; }
 
 .avatar-photo {
-  width: 50px;
+  width: 30px;
   margin-top: 5px; }
 
+@media (min-width: 768px) {
+  .title-dashboard {
+    font-size: 1.7em; }
+
+  .greeting {
+    font-size: 1em;
+    margin-right: 10px; }
+
+  .avatar-photo {
+    width: 50px; } }
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 35px; }
-
-.card {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%; }
+  margin-top: 35px; }
 
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+
 .projects_user {
+  background: whitesmoke;
+  border: 3px solid #ede675;
+  border-radius: 7px;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  background: whitesmoke;
-  border: 3px solid #ede675;
-  margin: 0;
-  margin-top: 1%;
-  width: 30%;
-  margin-right: 2%;
-  border-radius: 7px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 15px;
-  margin-left: 5px; }
+  width: 85%; }
 
 .project-info {
   display: -webkit-box;
@@ -206,6 +223,10 @@ header {
 .modules-div {
   max-height: 50px; }
 
+.img-modules {
+  width: 10px;
+  margin-right: 5px; }
+
 .timeline-project {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,7 +247,7 @@ header {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 20px; }
+  margin-top: 15px; }
 
 .progress-stories,
 .number-progress {
@@ -240,11 +261,14 @@ header {
 .margin-paragraph {
   margin: 0; }
 
-.progress {
+.progress,
+.issues {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
 
 .line-progress {
   display: -webkit-box;
@@ -272,5 +296,20 @@ a {
 a:hover,
 .project-title:hover {
   background-color: yellow; }
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 85%; }
+
+  .projects_user {
+    margin-top: 1%;
+    margin-right: 2%;
+    width: 45%; } }
+@media (min-width: 1024px) {
+  .card {
+    max-width: 80%; }
+
+  .projects_user {
+    width: 30%; } }
 
 /*# sourceMappingURL=styles.css.map */

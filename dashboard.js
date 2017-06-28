@@ -94,12 +94,12 @@ function generateCardHtml(divId, projectSlug){
       "<div class='like-watch flex'>"+
         "<div class='like-div flex'>"+
           "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
-          "<small >Likes: </small>"+
+          "<small >   Likes:  </small>"+
           "<small class='like'></small>"+
           "</div>"+
           "<div class='watch-div'>"+
             "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
-            "<small>Views: </small>"+
+            "<small>  Views: </small>"+
             "<small class='watch'></small>"+
             "</div>"+
             "</div>"+
@@ -131,7 +131,7 @@ function generateCardHtml(divId, projectSlug){
         //quitar las comilla que hay delante del div
         /*"<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'>*/"<div class='number-progress flex'>"+
         "<p class='number-issues'></p>"+
-        "<div class='issues'>"+
+        "<div class='issues flex'>"+
           "<p class= 'margin-paragraph'>NEW</p>"+
           "<p class= 'margin-paragraph'>issues</p>"+
         "</div>"+
@@ -140,12 +140,12 @@ function generateCardHtml(divId, projectSlug){
 
       "<div class='line-progress flex'>"+
       "<div class='sprint-div'>" +
-        "<p>Sprint</p>"+
+        "<p>Sprint:  </p>"+
         "<p class= 'sprints'></p>" +
         "</div>"+
         "<div class='points-div'>" +
         "<p class= 'closed-points'></p>"+
-        "<p >user stories closed</p>"+
+        "<p >  user stories closed</p>"+
         "</div>"+
       "</div>"+
 
@@ -195,32 +195,32 @@ function modulesCall(project, divId, projectSlug) {
   var modules = [
     {
       property: "is_backlog_activated",
-      label: "backlog",
+      label: '<img class="img-modules" src="img/modules.png">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/backlog"
     },
     {
       property: "is_epics_activated",
-      label: "epics",
+      label: '<img class="img-modules" src="img/modules.png">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/epics"
     },
     {
       property: "is_issues_activated",
-      label: "issues",
+      label: '<img class="img-modules" src="img/modules.png">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/issues"
     },
     {
       property: "is_kanban_activated",
-      label: "kanban",
+      label: '<img class="img-modules" src="img/modules.png">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/kanban"
     },
     {
       property: "is_wiki_activated",
-      label: "wiki",
+      label: '<img class="img-modules" src="img/modules.png">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/wiki"
     },
     {
       property: "is_contact_activated",
-      label: "contact",
+      label: '<img class="img-modules" src="img/modules.png">',
       link: "#"
     },
   ];
@@ -295,7 +295,7 @@ function callProgressProject(project, divId) {
       var sprintProject = document.querySelector("#" + divId + " .sprints");
       var data = JSON.parse(pointRequest.responseText);
       var number;
-      if (closedPoints.innerHTML !== data.closed_points + "/" + data.defined_points) {
+      if (closedPoints.innerHTML !== data.closed_points + "/" + data.defined_points ) {
         closedPoints.innerHTML = data.closed_points + "/" + data.defined_points;
       }
       if (sprintProject.innerHTML !== data.total_milestones) {
