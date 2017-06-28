@@ -1,4 +1,18 @@
-.title-dashboard,
-.greeting{
-  color: white;
+h5{
+  font-size: 1.7em;
+  color: $font-color-primary;
+}
+
+h3{
+  margin: 5px;
+  color: $font-color-primary;
+}
+
+small{
+  font-size: 1em;
+  color: $font-color-primary;
+}
+
+p{
+color: $font-color-primary;
 }

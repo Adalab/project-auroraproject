@@ -84,13 +84,13 @@ function generateCardHtml(divId, projectSlug){
 
 "<div id='" + divId + "' class= 'projects_user'>"+
 
-"<div class='project-info'>"+
+"<div class='project-info truncate'>"+
   "<div class='img-project flex'>"+
     "<div class='project-img'>"+
       "</div>"+
       "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title'></h5></a>"+
       "</div>"+
-      "<small class='description-project truncate'>Descripcion del proyecto</small>"+
+      "<small class='description-project truncate'></small>"+
       "<div class='like-watch flex'>"+
         "<div class='like-div flex'>"+
           "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
@@ -120,19 +120,20 @@ function generateCardHtml(divId, projectSlug){
 
     "<div class='progress-project'>"+
       "<div class='stories-issues flex'>"+
-        "<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'><div class='progress-stories flex'>"+
+      //quitar las comilla que hay delante del div
+        /*"<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'>*/"<div class='progress-stories flex'>"+
         "<p class='number-stories'></p>"+
         "<div class='progress flex'>"+
-          "<p>IN PROGRESS</p>"+
-          "<p>user stories</p>"+
+          "<p class= 'margin-paragraph'>IN PROGRESS</p>"+
+          "<p class= 'margin-paragraph'>user stories</p>"+
         "</div>"+
         "</div></a>"+
-
-        "<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'><div class='number-progress flex'>"+
+        //quitar las comilla que hay delante del div
+        /*"<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'>*/"<div class='number-progress flex'>"+
         "<p class='number-issues'></p>"+
         "<div class='issues'>"+
-          "<p>NEW</p>"+
-          "<p>issues</p>"+
+          "<p class= 'margin-paragraph'>NEW</p>"+
+          "<p class= 'margin-paragraph'>issues</p>"+
         "</div>"+
         "</div></a>"+
       "</div>"+
@@ -169,7 +170,7 @@ function basicInfoUpdate(project, divId) {
     projectTitle.innerHTML = project.name;
   }
   if (project.logo_small_url === null) {
-    imgProject.innerHTML = '<img src="img/photo-null-project.svg">';
+    imgProject.innerHTML = '<img class="img-nullProject" src="img/photo-null-project.svg">';
 
   } else {
     imgProject.innerHTML= '<img src="'+ project.logo_small_url +'">';

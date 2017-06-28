@@ -46,9 +46,20 @@ form {
           flex-direction: column;
   width: 40%; }
 
-.title-dashboard,
-.greeting {
-  color: white; }
+h5 {
+  font-size: 1.7em;
+  color: #13645b; }
+
+h3 {
+  margin: 5px;
+  color: #13645b; }
+
+small {
+  font-size: 1em;
+  color: #13645b; }
+
+p {
+  color: #13645b; }
 
 input {
   margin-bottom: 10px;
@@ -64,7 +75,7 @@ input {
 
 header {
   width: 100%;
-  height: 15%;
+  height: 12%;
   background-color: #45b4ab;
   -webkit-box-shadow: -7px -16px 161px 16px rgba(0, 0, 0, 0.67);
           box-shadow: -7px -16px 161px 16px rgba(0, 0, 0, 0.67); }
@@ -83,9 +94,14 @@ header {
       -ms-flex-align: center;
           align-items: center; }
 
+.title-dashboard {
+  font-size: 1.7em;
+  color: white; }
+
 .greeting {
   font-size: 1em;
-  margin-right: 10px; }
+  margin-right: 10px;
+  color: white; }
 
 .user_info {
   display: -webkit-box;
@@ -100,13 +116,19 @@ header {
           align-items: center; }
 
 .avatar-photo {
-  width: 50px; }
+  width: 50px;
+  margin-top: 5px; }
 
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 35px; }
+
+.card {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%; }
 
 .flex {
   display: -webkit-box;
@@ -118,8 +140,8 @@ header {
       -ms-flex-positive: 0;
           flex-grow: 0;
   background: whitesmoke;
-  color: #13645b;
   border: 3px solid #ede675;
+  margin: 0;
   margin-top: 1%;
   width: 30%;
   margin-right: 2%;
@@ -134,15 +156,38 @@ header {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  max-height: 170px;
+  margin-bottom: 10px; }
+
+.img-nullProject {
+  width: 75px; }
+
+.img-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.project-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 400px;
+  margin-bottom: 10px; }
+
+.project-img {
+  text-align: center; }
 
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
-
-.project-img {
-  width: 100%; }
 
 .like-div,
 .watch-div {
@@ -154,6 +199,12 @@ header {
 .logolike,
 .logowatch {
   padding: 2%; }
+
+.like-watch {
+  margin-top: 10px; }
+
+.modules-div {
+  max-height: 50px; }
 
 .timeline-project {
   display: -webkit-box;
@@ -173,10 +224,21 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 20px; }
+
+.progress-stories,
+.number-progress {
+  line-height: 0.6em; }
+
+.number-stories,
+.number-issues {
+  font-size: 1.5em;
+  margin: 9px 5px; }
+
+.margin-paragraph {
+  margin: 0; }
 
 .progress {
   -webkit-box-orient: vertical;
@@ -199,8 +261,10 @@ header {
   display: flex; }
 
 .progress-bar {
-  width: 85%;
-  margin-right: 5px; }
+  width: 80%;
+  margin-right: 5px;
+  border-radius: 5px;
+  height: 22px; }
 
 a {
   text-decoration: none; }

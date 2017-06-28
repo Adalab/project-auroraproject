@@ -4,6 +4,12 @@
   margin: 35px;
 }
 
+.card{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
 .flex{
   display: flex;
 }
@@ -11,29 +17,49 @@
 .projects_user{
   flex-grow: 0;
   background: whitesmoke;
-  color: rgb(19,100,91);
   border: 3px solid rgb(237,230,117);
+  margin: 0;
   margin-top: 1%;
   width: 30%;
   margin-right: 2%;
   border-radius: 7px;
   padding: 15px;
   margin-left: 5px;
+
 }
 
 .project-info{
   display: flex;
   flex-direction: column;
+  max-height: 170px;
+  margin-bottom: 10px;
+}
+
+.img-nullProject{
+width: 75px;
+}
+
+.img-project{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-title{
+  margin: 0;
+  text-align: center;
+  font-weight: 400px;
+  margin-bottom: 10px;
+}
+
+.project-img{
+  text-align: center;
 }
 
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.project-img{
-  width: 100%;
 }
 
 .like-div,
@@ -45,6 +71,14 @@
 .logolike,
 .logowatch{
   padding: 2%;
+}
+
+.like-watch{
+  margin-top: 10px;
+}
+
+.modules-div{
+  max-height: 50px;
 }
 
 .timeline-project{
@@ -59,8 +93,23 @@
 
 .stories-issues{
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
 
+.progress-stories,
+.number-progress{
+  line-height: 0.6em;
+}
+
+.number-stories,
+.number-issues{
+  font-size: 1.5em;
+  margin: 9px 5px;
+}
+
+.margin-paragraph{
+  margin:0;
 }
 
 .progress{
@@ -78,13 +127,17 @@
 }
 
 .progress-bar{
-width: 85%;
+width: 80%;
 margin-right: 5px;
+border-radius: 5px;
+height: 22px;
+// background-color: $font-color-primary;
 }
 
 a{
   text-decoration: none;
 }
+
 a:hover,
 .project-title:hover{
   background-color: yellow;
