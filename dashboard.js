@@ -2,7 +2,7 @@
 var card = document.querySelector(".card");
 userCall();
 projectsCall();
-setInterval(projectsCall, 1000);
+setInterval(projectsCall, 10000);
 
 // function showAvatarImage(photo) {
 //   var avatar = document.querySelector(".avatar");
@@ -73,46 +73,45 @@ function printProject(project) {
     generateCardHtml(divId, project.slug);
   }
   basicInfoUpdate(project, divId);
-  modulesCall(project, divId);
+  modulesCall(project, divId, project.slug);
   callProgressProject(project, divId);
 
 }
 
 function generateCardHtml(divId, projectSlug){
+
   card.innerHTML +=
 
 "<div id='" + divId + "' class= 'projects_user'>"+
 
-  "<div class='project-info'>"+
-
-    "<div class='img-project'>"+
-      "<div class='project-img'>"+
-
+"<div class='project-info'>"+
+  "<div class='img-project flex'>"+
+    "<div class='project-img'>"+
       "</div>"+
-
-      "<a href='https://tree.taiga.io/project/ + project.slug '><h5 class='project-title'></h5></a>"+
-    "</div>"+
-    "<small class='description-project'>Descripcion del proyecto</small>"+
-    "<div class='like-watch flex'>"+
-      "<div class='like-div flex'>"+
-        "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
-        "<small class='like'>Likes: </small>"+
+      "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title'></h5></a>"+
       "</div>"+
-      "<div class='watch-div'>"+
-        "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
-        "<small class='watch'>Views: </small>"+
-      "</div>"+
-    "</div>"+
-    "</div>"+
+      "<small class='description-project truncate'>Descripcion del proyecto</small>"+
+      "<div class='like-watch flex'>"+
+        "<div class='like-div flex'>"+
+          "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
+          "<small class='like'>Likes: </small>"+
+          "</div>"+
+          "<div class='watch-div'>"+
+            "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
+            "<small class='watch'>Views: </small>"+
+            "</div>"+
+            "</div>"+
+            "</div>"+
 
     "<div class='timeline-project flex'>"+
+      "<small>Modules: <small>" +
       "<small class='modules'></small>"+
-      "<a href='https://tree.taiga.io/project/ + project.slug + /team'><small class='team'></small></a>"+
+      "<a href='https://tree.taiga.io/project/" + projectSlug + "/team'><small class='team'></small></a>"+
     "</div>"+
 
     "<div class='progress-project'>"+
       "<div class='stories-issues flex'>"+
-        "<a href='#'><div class='progress-stories flex'>"+
+        "<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'><div class='progress-stories flex'>"+
         "<p class='number-stories'></p>"+
         "<div class='progress flex'>"+
           "<p>IN PROGRESS</p>"+
@@ -120,7 +119,7 @@ function generateCardHtml(divId, projectSlug){
         "</div>"+
         "</div></a>"+
 
-        "<a href='#'><div class='number-progress flex'>"+
+        "<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'><div class='number-progress flex'>"+
         "<p class='number-issues'></p>"+
         "<div class='issues'>"+
           "<p>NEW</p>"+
@@ -158,6 +157,7 @@ function basicInfoUpdate(project, divId) {
   }
   if (project.logo_small_url === null) {
     imgProject.innerHTML = '<img src="img/photo-null-project.svg">';
+
   } else {
     imgProject.innerHTML= '<img src="'+ project.logo_small_url +'">';
   }
@@ -176,33 +176,33 @@ function basicInfoUpdate(project, divId) {
   }
 }
 
-function modulesCall(project, divId) {
+function modulesCall(project, divId, projectSlug) {
   var modulesProject = document.querySelector("#" + divId + " .modules");
   var modules = [
     {
       property: "is_backlog_activated",
       label: "backlog",
-      link: "#"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/backlog"
     },
     {
       property: "is_epics_activated",
       label: "epics",
-      link: "#"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/epics"
     },
     {
       property: "is_issues_activated",
       label: "issues",
-      link: "#"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/issues"
     },
     {
       property: "is_kanban_activated",
       label: "kanban",
-      link: "#"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/kanban"
     },
     {
       property: "is_wiki_activated",
       label: "wiki",
-      link: "#"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/wiki"
     },
     {
       property: "is_contact_activated",

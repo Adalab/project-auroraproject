@@ -7,7 +7,8 @@ body {
   font-family: "Abel", sans-serif;
   background: -webkit-gradient(linear, left top, left bottom, from(#ecd336), to(#008fb7));
   background: linear-gradient(#ecd336, #008fb7);
-  height: 100vh; }
+  background-size: 100%;
+  background-repeat: no-repeat; }
 
 .body-dashboard {
   max-width: 100%;
@@ -107,7 +108,7 @@ header {
 .projects_user {
   background: whitesmoke;
   color: #13645b;
-  border: 3.5px solid #ede675;
+  border: 3px solid #ede675;
   margin-top: 1%;
   width: 30%;
   height: 95%;
@@ -125,13 +126,13 @@ header {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.project-title {
-  font-size: 1.2em;
-  position: relative; }
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
-.img-project {
-  max-width: 90px;
-  height: 85px; }
+.project-img {
+  width: 100%; }
 
 a {
   text-decoration: none; }

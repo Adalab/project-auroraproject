@@ -1,15 +1,8 @@
+
 .row{
   display: flex;
   margin: 35px;
 }
-
-// .column{
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 30%;
-//   width: 30%;
-//   padding-right: 10px;
-// }
 
 .flex{
   display: flex;
@@ -18,7 +11,7 @@
 .projects_user{
   background: whitesmoke;
   color: rgb(19,100,91);
-  border: 3.5px solid rgb(237,230,117);
+  border: 3px solid rgb(237,230,117);
   margin-top: 1%;
   width: 30%;
   height: 95%;
@@ -33,15 +26,15 @@
   flex-direction: column;
 }
 
-.project-title {
-  font-size: 1.2em;
-  position: relative;
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project-img{
+  width: 100%;
 }
 
-.img-project {
-  max-width: 90px;
-  height: 85px;
-}
 
 a{
   text-decoration: none;

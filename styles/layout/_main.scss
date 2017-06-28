@@ -5,7 +5,8 @@ body{
   margin: 0;
   font-family: $default-font-family;
   background: linear-gradient(rgb(236,211,54), rgb(0,143,183));
-  height:100vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
 
 }
 
