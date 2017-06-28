@@ -13,11 +13,16 @@ header {
 }
 
 .greeting{
-  padding: 10px;
+  font-size: 1em;
+  margin-right: 10px;
 }
 
 .user_info{
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.avatar-photo{
+  width: 50px;
 }

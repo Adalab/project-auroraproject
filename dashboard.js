@@ -26,9 +26,9 @@ function userCall() {
       var avatar = document.querySelector(".avatar");
       greeting.innerHTML = "Hello, " + data.full_name;
       if (data.photo === null) {
-        avatar.innerHTML = '<img src="img/nonAvatar.svg">';
+        avatar.innerHTML = '<img class="avatar-photo" src="img/nonAvatar.svg">';
       }else {
-        avatar.innerHTML = '<img src="'+ data.photo +'">';
+        avatar.innerHTML = '<img class="avatar-photo" src="'+ data.photo +'">';
         // avatar.style.width = '50px';
       }
       console.log(data);
@@ -94,19 +94,28 @@ function generateCardHtml(divId, projectSlug){
       "<div class='like-watch flex'>"+
         "<div class='like-div flex'>"+
           "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
-          "<small class='like'>Likes: </small>"+
+          "<small >Likes: </small>"+
+          "<small class='like'></small>"+
           "</div>"+
           "<div class='watch-div'>"+
             "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
-            "<small class='watch'>Views: </small>"+
+            "<small>Views: </small>"+
+            "<small class='watch'></small>"+
             "</div>"+
             "</div>"+
             "</div>"+
 
     "<div class='timeline-project flex'>"+
+    "<div class='modules-div'>" +
       "<small>Modules: <small>" +
       "<small class='modules'></small>"+
+      "<div>" +
+      "<div class='modules-div'>" +
+      "<small>Team: <small>" +
       "<a href='https://tree.taiga.io/project/" + projectSlug + "/team'><small class='team'></small></a>"+
+    "</div>"+
+    "</div>"+
+    "</div>"+
     "</div>"+
 
     "<div class='progress-project'>"+
@@ -129,13 +138,17 @@ function generateCardHtml(divId, projectSlug){
       "</div>"+
 
       "<div class='line-progress flex'>"+
+      "<div class='sprint-div'>" +
         "<p>Sprint</p>"+
         "<p class= 'sprints'></p>" +
+        "</div>"+
+        "<div class='points-div'>" +
         "<p class= 'closed-points'></p>"+
         "<p >user stories closed</p>"+
+        "</div>"+
       "</div>"+
 
-      "<div class='barra'>"+
+      "<div class='bar'>"+
         "<progress class='progress-bar' value='0' max='100'></progress>"+
         "<span class ='percentage-bar'></span>"+
       "</div>"+
@@ -165,8 +178,8 @@ function basicInfoUpdate(project, divId) {
   if (descriptionProject.innerHTML !== project.description) {
     descriptionProject.innerHTML = project.description;
   }
-  if (teamProject.innerHTML !== "Team: " + project.members.length) {
-    teamProject.innerHTML = "Team: " + project.members.length;
+  if (teamProject.innerHTML !== project.members.length) {
+    teamProject.innerHTML = project.members.length;
   }
   if (likesProject.innerHTML !== project.total_fans) {
     likesProject.innerHTML = project.total_fans;

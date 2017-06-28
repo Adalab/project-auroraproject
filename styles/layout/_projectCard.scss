@@ -9,12 +9,12 @@
 }
 
 .projects_user{
+  flex-grow: 0;
   background: whitesmoke;
   color: rgb(19,100,91);
   border: 3px solid rgb(237,230,117);
   margin-top: 1%;
   width: 30%;
-  height: 95%;
   margin-right: 2%;
   border-radius: 7px;
   padding: 15px;
@@ -31,10 +31,56 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .project-img{
   width: 100%;
 }
 
+.like-div,
+.watch-div {
+  width: 100px;
+  align-items: center;
+}
+
+.logolike,
+.logowatch{
+  padding: 2%;
+}
+
+.timeline-project{
+  display: flex;
+  flex-direction: row;
+  border-top: 1.5px solid rgb(237,230,117);
+  border-bottom: 1.5px solid rgb(237,230,117);
+  padding-bottom: 7px;
+  padding-top: 7px;
+  bottom: 40px;
+}
+
+.stories-issues{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.progress{
+  flex-direction: column;
+}
+
+.line-progress{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sprint-div,
+.points-div{
+  display: flex;
+}
+
+.progress-bar{
+width: 85%;
+margin-right: 5px;
+}
 
 a{
   text-decoration: none;

@@ -46,6 +46,10 @@ form {
           flex-direction: column;
   width: 40%; }
 
+.title-dashboard,
+.greeting {
+  color: white; }
+
 input {
   margin-bottom: 10px;
   padding: 3%; }
@@ -80,7 +84,8 @@ header {
           align-items: center; }
 
 .greeting {
-  padding: 10px; }
+  font-size: 1em;
+  margin-right: 10px; }
 
 .user_info {
   display: -webkit-box;
@@ -94,6 +99,9 @@ header {
       -ms-flex-align: center;
           align-items: center; }
 
+.avatar-photo {
+  width: 50px; }
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,12 +114,14 @@ header {
   display: flex; }
 
 .projects_user {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   background: whitesmoke;
   color: #13645b;
   border: 3px solid #ede675;
   margin-top: 1%;
   width: 30%;
-  height: 95%;
   margin-right: 2%;
   border-radius: 7px;
   padding: 15px;
@@ -133,6 +143,64 @@ header {
 
 .project-img {
   width: 100%; }
+
+.like-div,
+.watch-div {
+  width: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.logolike,
+.logowatch {
+  padding: 2%; }
+
+.timeline-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-top: 1.5px solid #ede675;
+  border-bottom: 1.5px solid #ede675;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  bottom: 40px; }
+
+.stories-issues {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.progress {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.line-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.sprint-div,
+.points-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.progress-bar {
+  width: 85%;
+  margin-right: 5px; }
 
 a {
   text-decoration: none; }
