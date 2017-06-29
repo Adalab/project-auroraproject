@@ -33,7 +33,7 @@ function login() {
       sessionStorage.setItem("user", JSON.stringify(userData));
       window.location.href = "dashboard.html" ;
     } else{
-      if (data._error_message === "Username or password does not matches user.") {
+      if (data._error_type === "taiga.base.exceptions.WrongArguments") {
         loginErrorText.innerHTML = "Username or password does not matches user." ;
         loginErrorText.style.backgroundColor = '#ef0707';
         loginErrorText.style.color = '#ffffff';

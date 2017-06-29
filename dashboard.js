@@ -195,32 +195,38 @@ function modulesCall(project, divId, projectSlug) {
     {
       property: "is_backlog_activated",
       label: '<img class="img-modules" src="img/backlog.svg">',
-      link: "https://tree.taiga.io/project/" + projectSlug + "/backlog"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/backlog",
+      description:"Backlog"
     },
     {
       property: "is_epics_activated",
       label: '<img class="img-modules" src="img/epics.svg">',
-      link: "https://tree.taiga.io/project/" + projectSlug + "/epics"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/epics",
+      description:"Epics"
     },
     {
       property: "is_issues_activated",
       label: '<img class="img-modules" src="img/issues.svg">',
-      link: "https://tree.taiga.io/project/" + projectSlug + "/issues"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/issues",
+      description:"Issues"
     },
     {
       property: "is_kanban_activated",
       label: '<img class="img-modules" src="img/kanban.svg">',
-      link: "https://tree.taiga.io/project/" + projectSlug + "/kanban"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/kanban",
+      description:"Kanban"
     },
     {
       property: "is_wiki_activated",
       label: '<img class="img-modules" src="img/wiki.svg">',
-      link: "https://tree.taiga.io/project/" + projectSlug + "/wiki"
+      link: "https://tree.taiga.io/project/" + projectSlug + "/wiki",
+      description:"Wiki"
     },
     {
       property: "is_contact_activated",
       label: '<img class="img-modules" src="img/meetUp.svg">',
-      link: "#"
+      link: "#",
+      description:"meetUp"
     },
   ];
   modulesProject.innerHTML = "";
@@ -228,7 +234,11 @@ function modulesCall(project, divId, projectSlug) {
     var module = modules[i];
 
     if (project[module.property] === true) {
-      modulesProject.innerHTML += '<a href="' + module.link + '">' + module.label + '</a>';
+      modulesProject.innerHTML +=
+      '<div class="tooltip tooltip'+ i +'">'
+      + '<a href="' + module.link + '">' + module.label + '</a>'
+      + '<span class="tooltip-text">' + module.description + '</span>'
+      + '</div>';
     } else {
       console.log("no found");
     }
