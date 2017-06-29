@@ -1,7 +1,7 @@
 
 header {
   width: 100%;
-  height: 12%;
+  height: 7vh;
   background-color:rgb(69,180,171);
   box-shadow: -7px -16px 161px 16px rgba(0,0,0,0.67);
 }
@@ -11,19 +11,22 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 80%;
+  height: 7vh;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
+.logo-aurora{
+  width: 50px;
+}
+
 .title-dashboard{
-  font-size: 1em;
-  color: $primary-color;
+  display: none;;
 }
 
 .greeting{
-  font-size: 0.7em;
-  color: $primary-color;
+  display: none;
 }
 
 .user_info{
@@ -38,16 +41,40 @@ header {
 }
 
 @media (min-width: 768px) {
+
+  header {
+    height: 8vh;
+  }
+
+  .header-container {
+    max-width: 90%;
+  }
+
+  .aurora-info{
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-aurora{
+    width: 50px;
+  }
+
   .title-dashboard{
+    display: block;
+    color: $primary-color;
     font-size: 1.7em;
   }
 
   .greeting{
+    display: block;
     font-size: 1em;
+    color: $primary-color;
     margin-right: 10px;
   }
+
   .avatar-photo{
-    width: 50px;
+    width: 40px;
+    margin-top: 10px;
   }
 
 }

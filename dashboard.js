@@ -70,7 +70,7 @@ function projectsCall() {
 function printProject(project) {
   var divId = "d" + project.id + "_user";
   if (document.getElementById(divId) === null) {
-    generateCardHtml(divId, project.slug);
+    generateCardHtml(divId, project.slug, project.name);
   }
   basicInfoUpdate(project, divId);
   modulesCall(project, divId, project.slug);
@@ -78,7 +78,7 @@ function printProject(project) {
 
 }
 
-function generateCardHtml(divId, projectSlug){
+function generateCardHtml(divId, projectSlug, projectName){
 
   card.innerHTML +=
 
@@ -88,7 +88,7 @@ function generateCardHtml(divId, projectSlug){
   "<div class='img-project flex'>"+
     "<div class='project-img'>"+
       "</div>"+
-      "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title'></h5></a>"+
+      "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title' alt='" + projectName + "'></h5></a>"+
       "</div>"+
       "<small class='description-project truncate'></small>"+
       "<div class='like-watch flex'>"+
@@ -107,11 +107,11 @@ function generateCardHtml(divId, projectSlug){
 
     "<div class='timeline-project flex'>"+
     "<div class='modules-div'>" +
-      "<small>Modules: <small>" +
+      "<small>Modules: </small>" +
       "<small class='modules'></small>"+
       "<div>" +
       "<div class='modules-div'>" +
-      "<small>Team: <small>" +
+      "<small>Team: </small>" +
       "<a href='https://tree.taiga.io/project/" + projectSlug + "/team'><small class='team'></small></a>"+
     "</div>"+
     "</div>"+
@@ -121,7 +121,7 @@ function generateCardHtml(divId, projectSlug){
     "<div class='progress-project'>"+
       "<div class='stories-issues flex'>"+
       //quitar las comilla que hay delante del div
-        /*"<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'>*/"<div class='progress-stories flex'>"+
+        "<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'><div class='progress-stories flex'>"+
         "<p class='number-stories'></p>"+
         "<div class='progress flex'>"+
           "<p class= 'margin-paragraph'>IN PROGRESS</p>"+
@@ -129,7 +129,7 @@ function generateCardHtml(divId, projectSlug){
         "</div>"+
         "</div></a>"+
         //quitar las comilla que hay delante del div
-        /*"<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'>*/"<div class='number-progress flex'>"+
+        "<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'><div class='number-progress flex'>"+
         "<p class='number-issues'></p>"+
         "<div class='issues flex'>"+
           "<p class= 'margin-paragraph'>NEW</p>"+
@@ -145,7 +145,7 @@ function generateCardHtml(divId, projectSlug){
         "</div>"+
         "<div class='points-div'>" +
         "<p class= 'closed-points'></p>"+
-        "<p >  user stories closed</p>"+
+        "<p class = 'p-user-stories'>user stories closed</p>"+
         "</div>"+
       "</div>"+
 
@@ -195,32 +195,32 @@ function modulesCall(project, divId, projectSlug) {
   var modules = [
     {
       property: "is_backlog_activated",
-      label: '<img class="img-modules" src="img/modules.png">',
+      label: '<img class="img-modules" src="img/backlog.svg">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/backlog"
     },
     {
       property: "is_epics_activated",
-      label: '<img class="img-modules" src="img/modules.png">',
+      label: '<img class="img-modules" src="img/epics.svg">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/epics"
     },
     {
       property: "is_issues_activated",
-      label: '<img class="img-modules" src="img/modules.png">',
+      label: '<img class="img-modules" src="img/issues.svg">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/issues"
     },
     {
       property: "is_kanban_activated",
-      label: '<img class="img-modules" src="img/modules.png">',
+      label: '<img class="img-modules" src="img/kanban.svg">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/kanban"
     },
     {
       property: "is_wiki_activated",
-      label: '<img class="img-modules" src="img/modules.png">',
+      label: '<img class="img-modules" src="img/wiki.svg">',
       link: "https://tree.taiga.io/project/" + projectSlug + "/wiki"
     },
     {
       property: "is_contact_activated",
-      label: '<img class="img-modules" src="img/modules.png">',
+      label: '<img class="img-modules" src="img/meetUp.svg">',
       link: "#"
     },
   ];

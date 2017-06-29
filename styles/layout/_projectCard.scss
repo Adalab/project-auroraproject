@@ -1,4 +1,9 @@
 
+.body-dashboard{
+ margin-top: 0;
+ background-color: #EEEEEE;
+}
+
 .row{
   display: flex;
   margin-top: 35px;
@@ -9,23 +14,23 @@
 }
 
 .card{
-  display: flex;
   flex-wrap: wrap;
   max-width: 90%;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .projects_user{
   background: whitesmoke;
-  border: 3px solid rgb(237,230,117);
+  border: 1px solid rgb(19,100,91);
   border-radius: 7px;
   flex-grow: 0;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
-  width: 85%;
+  width: 98%;
 }
 
 .project-info{
@@ -49,7 +54,6 @@
   margin: 0;
   text-align: center;
   font-weight: 400px;
-  margin-bottom: 10px;
 }
 
 .project-img{
@@ -60,6 +64,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.description-project{
+  margin-top: 10px;
 }
 
 .like-div,
@@ -82,15 +90,15 @@
 }
 
 .img-modules{
-  width: 10px;
+  width: 16px;
   margin-right: 5px;
 }
 
 .timeline-project{
   display: flex;
   flex-direction: row;
-  border-top: 1.5px solid rgb(237,230,117);
-  border-bottom: 1.5px solid rgb(237,230,117);
+  border-top: 1.5px solid rgb(19,100,91);
+  border-bottom: 1.5px solid rgb(19,100,91);
   padding-bottom: 7px;
   padding-top: 7px;
   bottom: 40px;
@@ -133,11 +141,20 @@
   display: flex;
 }
 
+.p-user-stories{
+  margin-left: 5px;
+}
+
 .progress-bar{
   width: 80%;
-  margin-right: 5px;
-  border-radius: 5px;
+  // margin-right: 5px;
+  // border-radius: 5px;
   height: 22px;
+}
+
+.percentage-bar{
+  margin-left: 10px;
+  color: $font-color-primary;
 }
 
 a{
@@ -146,7 +163,7 @@ a{
 
 a:hover,
 .project-title:hover{
-  background-color: yellow;
+  background-color: #f2ffa0;
 }
 
 @media (min-width: 768px) {
@@ -166,11 +183,11 @@ a:hover,
 
 @media (min-width:1024px) {
   .card{
-    max-width: 80%;
+    max-width: 85%;
   }
 
   .projects_user{
-    width: 30%;
+    width: 31%;
   }
 
 }
