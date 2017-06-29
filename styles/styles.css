@@ -145,7 +145,7 @@ header {
 
 @media (min-width: 768px) {
   header {
-    height: 8vh; }
+    height: 7vh; }
 
   .header-container {
     max-width: 90%; }
@@ -164,7 +164,7 @@ header {
   .title-dashboard {
     display: block;
     color: white;
-    font-size: 1.7em; }
+    font-size: 1.5em; }
 
   .greeting {
     display: block;
@@ -175,6 +175,9 @@ header {
   .avatar-photo {
     width: 40px;
     margin-top: 10px; } }
+@media (min-width: 1024px) {
+  header {
+    height: 8vh; } }
 .body-dashboard {
   margin-top: 0;
   background-color: #EEEEEE; }
@@ -298,11 +301,14 @@ header {
 
 .progress-stories,
 .number-progress {
-  line-height: 0.6em; }
+  line-height: 0.6em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .number-stories,
 .number-issues {
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin: 9px 5px; }
 
 .margin-paragraph {
@@ -347,7 +353,7 @@ a {
 
 a:hover,
 .project-title:hover {
-  background-color: #f2ffa0; }
+  background-color: #BFF7E9; }
 
 @media (min-width: 768px) {
   .card {
@@ -355,7 +361,6 @@ a:hover,
 
   .projects_user {
     margin-top: 1%;
-    margin-right: 2%;
     width: 45%; } }
 @media (min-width: 1024px) {
   .card {

@@ -113,11 +113,12 @@
 .progress-stories,
 .number-progress{
   line-height: 0.6em;
+  align-items: center;
 }
 
 .number-stories,
 .number-issues{
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin: 9px 5px;
 }
 
@@ -163,7 +164,7 @@ a{
 
 a:hover,
 .project-title:hover{
-  background-color: #f2ffa0;
+  background-color: #BFF7E9;
 }
 
 @media (min-width: 768px) {
@@ -174,14 +175,14 @@ a:hover,
 
   .projects_user{
     margin-top: 1%;
-    margin-right: 2%;
+    // margin-right: 2%;
     width: 45%;
   }
-
 
 }
 
 @media (min-width:1024px) {
+  
   .card{
     max-width: 85%;
   }

@@ -88,7 +88,7 @@ function generateCardHtml(divId, projectSlug, projectName){
   "<div class='img-project flex'>"+
     "<div class='project-img'>"+
       "</div>"+
-      "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title' alt='" + projectName + "'></h5></a>"+
+      "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title' title='" + projectName + "'></h5></a>"+
       "</div>"+
       "<small class='description-project truncate'></small>"+
       "<div class='like-watch flex'>"+
@@ -154,7 +154,6 @@ function generateCardHtml(divId, projectSlug, projectName){
         "<span class ='percentage-bar'></span>"+
       "</div>"+
     "</div>"+
-
   "</div>";
 }
 
@@ -173,7 +172,7 @@ function basicInfoUpdate(project, divId) {
     imgProject.innerHTML = '<img class="img-nullProject" src="img/photo-null-project.svg">';
 
   } else {
-    imgProject.innerHTML= '<img src="'+ project.logo_small_url +'">';
+    imgProject.innerHTML= '<img src="'+ project.logo_small_url +'"  title="asdasdasdasd">';
   }
 
   if (descriptionProject.innerHTML !== project.description) {

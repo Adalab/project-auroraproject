@@ -43,7 +43,7 @@ header {
 @media (min-width: 768px) {
 
   header {
-    height: 8vh;
+    height: 7vh;
   }
 
   .header-container {
@@ -62,7 +62,7 @@ header {
   .title-dashboard{
     display: block;
     color: $primary-color;
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
 
   .greeting{
@@ -77,4 +77,10 @@ header {
     margin-top: 10px;
   }
 
+}
+
+@media (min-width:1024px) {
+  header {
+    height: 8vh;
+  }
 }
