@@ -4,14 +4,14 @@ userCall();
 projectsCall();
 setInterval(projectsCall, 10000);
 
-// function showAvatarImage(photo) {
-//   var avatar = document.querySelector(".avatar");
-//   if (data.photo === null) {
-//     avatar.innerHTML = '<img src="img/nonAvatar.svg">';
-//   } else {
-//     avatar.innerHTML = '<img src="'+ data.photo +'">';
-//   }
-// }
+function showAvatarImage(data) {
+  var avatar = document.querySelector(".avatar");
+  if (data.photo === null) {
+    avatar.innerHTML = '<img class="avatar-photo" src="img/nonAvatar.svg">';
+  } else {
+    avatar.innerHTML = '<img class="avatar-photo" src="'+ data.photo +'">';
+  }
+}
 
 function userCall() {
   var userRequest = new XMLHttpRequest();
@@ -23,15 +23,8 @@ function userCall() {
     var greeting = document.querySelector(".greeting");
     if (userRequest.status >= 200 && userRequest.status < 400) {
       var data = JSON.parse(userRequest.responseText);
-      var avatar = document.querySelector(".avatar");
       greeting.innerHTML = "Hello, " + data.full_name;
-      if (data.photo === null) {
-        avatar.innerHTML = '<img class="avatar-photo" src="img/nonAvatar.svg">';
-      }else {
-        avatar.innerHTML = '<img class="avatar-photo" src="'+ data.photo +'">';
-        // avatar.style.width = '50px';
-      }
-      console.log(data);
+      showAvatarImage(data);
 
     } else {
       console.log("La respuesta del servidor ha devuelto un error");
@@ -78,83 +71,89 @@ function printProject(project) {
 
 }
 
+function generateProjectInfo(projectSlug, projectName) {
+  return "<div class='project-info truncate'>"+
+    "<div class='img-project flex'>"+
+      "<div class='project-img'>"+
+        "</div>"+
+        "<a href='https://tree.taiga.io/project/" + projectSlug + "'>" +
+        "<h5 class='project-title' title='" + projectName + "'></h5></a>"+
+        "</div>"+
+        "<small class='description-project truncate'></small>"+
+        "<div class='like-watch flex'>"+
+          "<div class='like-div flex'>"+
+            "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
+            "<small >   Likes:  </small>"+
+            "<small class='like'></small>"+
+            "</div>"+
+            "<div class='watch-div'>"+
+              "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
+              "<small>  Views: </small>"+
+              "<small class='watch'></small>"+
+              "</div>"+
+              "</div>"+
+              "</div>";
+}
+
+function generateProjectTimeline(projectSlug) {
+  return "<div class='timeline-project flex'>"+
+  "<div class='modules-div'>" +
+    "<small>Modules: </small>" +
+    "<small class='modules'></small>"+
+    "<div>" +
+    "<div class='modules-div'>" +
+    "<small>Team: </small>" +
+    "<a href='https://tree.taiga.io/project/" + projectSlug + "/team'><small class='team'></small></a>"+
+  "</div>"+
+  "</div>"+
+  "</div>"+
+  "</div>";
+}
+
+function genearteProjectProgres(projectSlug) {
+  return "<div class='progress-project'>"+
+        "<div class='stories-issues flex'>"+
+          "<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'><div class='progress-stories flex'>"+
+          "<p class='number-stories'></p>"+
+          "<div class='progress flex'>"+
+            "<p class= 'margin-paragraph'>IN PROGRESS</p>"+
+            "<p class= 'margin-paragraph'>user stories</p>"+
+          "</div>"+
+          "</div></a>"+
+          "<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'><div class='number-progress flex'>"+
+          "<p class='number-issues'></p>"+
+          "<div class='issues flex'>"+
+            "<p class= 'margin-paragraph'>NEW</p>"+
+            "<p class= 'margin-paragraph'>issues</p>"+
+          "</div>"+
+          "</div></a>"+
+        "</div>"+
+
+        "<div class='line-progress flex'>"+
+        "<div class='sprint-div'>" +
+          "<p>Sprint:  </p>"+
+          "<p class= 'sprints'></p>" +
+          "</div>"+
+          "<div class='points-div'>" +
+          "<p class= 'closed-points'></p>"+
+          "<p class = 'p-user-stories'>user stories closed</p>"+
+          "</div>"+
+        "</div>"+
+
+        "<div class='bar'>"+
+          "<progress class='progress-bar' value='0' max='100'></progress>"+
+          "<span class ='percentage-bar'></span>"+
+        "</div>"+
+      "</div>";
+}
+
 function generateCardHtml(divId, projectSlug, projectName){
 
-  card.innerHTML +=
-
-"<div id='" + divId + "' class= 'projects_user'>"+
-
-"<div class='project-info truncate'>"+
-  "<div class='img-project flex'>"+
-    "<div class='project-img'>"+
-      "</div>"+
-      "<a href='https://tree.taiga.io/project/" + projectSlug + "'><h5 class='project-title' title='" + projectName + "'></h5></a>"+
-      "</div>"+
-      "<small class='description-project truncate'></small>"+
-      "<div class='like-watch flex'>"+
-        "<div class='like-div flex'>"+
-          "<img class='logolike' src='img/heart.png' alt='logo likes'>"+
-          "<small >   Likes:  </small>"+
-          "<small class='like'></small>"+
-          "</div>"+
-          "<div class='watch-div'>"+
-            "<img class='logowatch' src='img/eye.png' alt='logo watching'>"+
-            "<small>  Views: </small>"+
-            "<small class='watch'></small>"+
-            "</div>"+
-            "</div>"+
-            "</div>"+
-
-    "<div class='timeline-project flex'>"+
-    "<div class='modules-div'>" +
-      "<small>Modules: </small>" +
-      "<small class='modules'></small>"+
-      "<div>" +
-      "<div class='modules-div'>" +
-      "<small>Team: </small>" +
-      "<a href='https://tree.taiga.io/project/" + projectSlug + "/team'><small class='team'></small></a>"+
-    "</div>"+
-    "</div>"+
-    "</div>"+
-    "</div>"+
-
-    "<div class='progress-project'>"+
-      "<div class='stories-issues flex'>"+
-      //quitar las comilla que hay delante del div
-        "<a href='https://tree.taiga.io/project/" + projectSlug + "/backlog'><div class='progress-stories flex'>"+
-        "<p class='number-stories'></p>"+
-        "<div class='progress flex'>"+
-          "<p class= 'margin-paragraph'>IN PROGRESS</p>"+
-          "<p class= 'margin-paragraph'>user stories</p>"+
-        "</div>"+
-        "</div></a>"+
-        //quitar las comilla que hay delante del div
-        "<a href=' https://tree.taiga.io/project/" + projectSlug + "/issues'><div class='number-progress flex'>"+
-        "<p class='number-issues'></p>"+
-        "<div class='issues flex'>"+
-          "<p class= 'margin-paragraph'>NEW</p>"+
-          "<p class= 'margin-paragraph'>issues</p>"+
-        "</div>"+
-        "</div></a>"+
-      "</div>"+
-
-      "<div class='line-progress flex'>"+
-      "<div class='sprint-div'>" +
-        "<p>Sprint:  </p>"+
-        "<p class= 'sprints'></p>" +
-        "</div>"+
-        "<div class='points-div'>" +
-        "<p class= 'closed-points'></p>"+
-        "<p class = 'p-user-stories'>user stories closed</p>"+
-        "</div>"+
-      "</div>"+
-
-      "<div class='bar'>"+
-        "<progress class='progress-bar' value='0' max='100'></progress>"+
-        "<span class ='percentage-bar'></span>"+
-      "</div>"+
-    "</div>"+
-  "</div>";
+  card.innerHTML += "<div id='" + divId + "' class= 'projects_user'>"+
+    generateProjectInfo(projectSlug, projectName) +
+    generateProjectTimeline(projectSlug) +
+    genearteProjectProgres(projectSlug) +
+    "</div>";
 }
 
 function basicInfoUpdate(project, divId) {
@@ -234,11 +233,7 @@ function modulesCall(project, divId, projectSlug) {
     var module = modules[i];
 
     if (project[module.property] === true) {
-      modulesProject.innerHTML +=
-      '<div class="tooltip tooltip'+ i +'">'
-      + '<a href="' + module.link + '">' + module.label + '</a>'
-      + '<span class="tooltip-text">' + module.description + '</span>'
-      + '</div>';
+      generateModuleSection(modulesProject, module, i);
     } else {
       console.log("no found");
     }
@@ -246,6 +241,14 @@ function modulesCall(project, divId, projectSlug) {
       modulesProject.innerHTML === project[module.property];
     }
   }
+}
+
+function generateModuleSection(modulesProject, module, uniqueId) {
+  modulesProject.innerHTML +=
+  '<div class="tooltip tooltip'+ uniqueId +'">'
+  + '<a href="' + module.link + '">' + module.label + '</a>'
+  + '<span class="tooltip-text">' + module.description + '</span>'
+  + '</div>';
 }
 
 function callProgressProject(project, divId) {
@@ -303,18 +306,13 @@ function callProgressProject(project, divId) {
       var progressBar = document.querySelector("#" + divId + " .progress-bar");
       var sprintProject = document.querySelector("#" + divId + " .sprints");
       var data = JSON.parse(pointRequest.responseText);
-      var number;
       if (closedPoints.innerHTML !== data.closed_points + "/" + data.defined_points ) {
         closedPoints.innerHTML = data.closed_points + "/" + data.defined_points;
       }
       if (sprintProject.innerHTML !== data.total_milestones) {
         sprintProject.innerHTML = data.total_milestones;
       }
-      if (data.defined_points === 0) {
-        number = 0;
-      } else {
-        number = Math.ceil(data.closed_points * 100/data.defined_points);
-      }
+      var number = calculatePointPercentage(data);
       if (percentageBar.innerHTML !== number + "%") {
         percentageBar.innerHTML = number + "%";
       }
@@ -330,4 +328,14 @@ function callProgressProject(project, divId) {
     console.log("Error al tratar de conectarse con el servidor");
   };
   pointRequest.send();
+}
+
+function calculatePointPercentage(data) {
+  var number;
+  if (data.defined_points === 0) {
+    number = 0;
+  } else {
+    number = Math.ceil(data.closed_points * 100/data.defined_points);
+  }
+  return number;
 }
