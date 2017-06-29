@@ -1,0 +1,26 @@
+
+// .show{
+// animation: showup 3s;
+// }
+//
+// @keyframes showup {
+// from {
+// opacity: 0;
+// }
+// to {
+// opacity: 1;
+// }
+// transform: translateY(50px);
+// transform: translateY(0);
+// }
+
+.img-logo {
+  animation: fadeFromTop 3s;
+}
+
+@keyframes fadeFromTop {
+  0% {
+    opacity: 0;
+  }
+  transform: translateY(-40%);
+}

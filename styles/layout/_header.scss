@@ -40,7 +40,7 @@ header {
   margin-top: 5px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $max-screen-size-tablet) {
 
   header {
     height: 7vh;
@@ -61,14 +61,14 @@ header {
 
   .title-dashboard{
     display: block;
-    color: $primary-color;
+    color: $secondary-color;
     font-size: 1.5em;
   }
 
   .greeting{
     display: block;
     font-size: 1em;
-    color: $primary-color;
+    color: $secondary-color;
     margin-right: 10px;
   }
 
@@ -79,7 +79,7 @@ header {
 
 }
 
-@media (min-width:1024px) {
+@media (min-width: $max-screen-size-laptop) {
   header {
     height: 8vh;
   }

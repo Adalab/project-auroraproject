@@ -1,7 +1,10 @@
+
 @import "_settings.scss" ;
-@import "layout/_main.scss" ;
 @import "_typography.scss" ;
+@import "_general.scss";
+@import "layout/_main.scss" ;
 @import "components/_buttons";
+@import "components/_tooltips.scss";
 @import "layout/_header.scss";
-// @import "components/_project.scss";
 @import "layout/_projectCard.scss";
+@import "_animation.scss";

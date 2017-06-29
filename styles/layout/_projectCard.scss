@@ -1,9 +1,4 @@
 
-.body-dashboard{
- margin-top: 0;
- background-color: #EEEEEE;
-}
-
 .row{
   display: flex;
   margin-top: 35px;
@@ -22,8 +17,8 @@
 }
 
 .projects_user{
-  background: whitesmoke;
-  border: 1px solid rgb(19,100,91);
+  background: $card-background-color;
+  border: 1px solid $primary-color;
   border-radius: 7px;
   flex-grow: 0;
   margin-bottom: 25px;
@@ -97,8 +92,8 @@
 .timeline-project{
   display: flex;
   flex-direction: row;
-  border-top: 1.5px solid rgb(19,100,91);
-  border-bottom: 1.5px solid rgb(19,100,91);
+  border-top: 1.5px solid $primary-color;
+  border-bottom: 1.5px solid $primary-color;
   padding-bottom: 7px;
   padding-top: 7px;
   bottom: 40px;
@@ -148,14 +143,12 @@
 
 .progress-bar{
   width: 80%;
-  // margin-right: 5px;
-  // border-radius: 5px;
   height: 22px;
 }
 
 .percentage-bar{
   margin-left: 10px;
-  color: $font-color-primary;
+  color: $primary-color;
 }
 
 a{
@@ -164,10 +157,10 @@ a{
 
 a:hover,
 .project-title:hover{
-  background-color: #BFF7E9;
+  background-color: $hover-a-background-color;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $max-screen-size-tablet) {
 
   .card{
     max-width: 85%;
@@ -175,14 +168,13 @@ a:hover,
 
   .projects_user{
     margin-top: 1%;
-    // margin-right: 2%;
     width: 45%;
   }
 
 }
 
-@media (min-width:1024px) {
-  
+@media (min-width: $max-screen-size-laptop) {
+
   .card{
     max-width: 85%;
   }
