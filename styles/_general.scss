@@ -4,7 +4,7 @@
 }
 
 .main-body{
-  font-family: $primary-color;
+  font-family: $default-font-family;
   background: linear-gradient(rgb(236,211,54), rgb(0,143,183));
   background-size: 100%;
   background-repeat: no-repeat;
@@ -14,6 +14,7 @@
 
 .body-dashboard{
  background-color: #EEEEEE;
+ font-family: $default-font-family;
  margin-top: 0;
  margin-left: auto;
  margin-right: auto;

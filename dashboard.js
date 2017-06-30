@@ -77,9 +77,9 @@ function generateProjectInfo(projectSlug, projectName) {
       "<div class='project-img'>"+
         "</div>"+
         "<a href='https://tree.taiga.io/project/" + projectSlug + "'>" +
-        "<h5 class='project-title' title='" + projectName + "'></h5></a>"+
+        "<h5 class='project-title truncate-title' title='" + projectName + "'></h5></a>"+
         "</div>"+
-        "<small class='description-project truncate'></small>"+
+        "<small class='description-project truncate-description'></small>"+
         "<div class='like-watch flex'>"+
           "<div class='like-div flex'>"+
             "<img class='logolike' src='img/heart.png' alt='logo likes'>"+

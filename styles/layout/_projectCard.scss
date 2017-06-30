@@ -55,7 +55,14 @@
   text-align: center;
 }
 
-.truncate {
+.truncate-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.truncate-description {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -107,13 +114,13 @@
 
 .progress-stories,
 .number-progress{
-  line-height: 0.6em;
+  line-height: 0.7em;
   align-items: center;
 }
 
 .number-stories,
 .number-issues{
-  font-size: 1.7em;
+  font-size: 1.8em;
   margin: 9px 5px;
 }
 
