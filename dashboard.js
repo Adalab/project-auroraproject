@@ -171,7 +171,7 @@ function basicInfoUpdate(project, divId) {
     imgProject.innerHTML = '<img class="img-nullProject" src="img/photo-null-project.svg">';
 
   } else {
-    imgProject.innerHTML= '<img src="'+ project.logo_small_url +'"  title="asdasdasdasd">';
+    imgProject.innerHTML= '<img src="'+ project.logo_small_url +'"  title="">';
   }
 
   if (descriptionProject.innerHTML !== project.description) {
